@@ -49,18 +49,23 @@ def update_all(params):
 	find_val=params[1]
 	update_id=params[2]
 	update_val=params[3]
-	
+	counter=0
 	if find_id=='Job ID':
-		job_list[find_val][name.index(update_id)]=update_val
+		if int(find_val) in job_list.keys():
+			job_list[int(find_val)][name.index(update_id)]=update_val
+			counter+=1
 	else:
 		for job in job_list.values():
 			if job[name.index(find_id)]==find_val:
+				counter+=1
 				job[name.index(update_id)]=update_val
+	print counter
+
 def delete_all(params):
 	find_id=params[0]
 	find_val=params[1]
 	if find_id=='Job ID':
-		del job_list[find_val]
+		del job_list[int(find_val)]
 	else:
 		rmint=[]
 		for job_id in job_list:
