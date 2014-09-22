@@ -1,4 +1,4 @@
-import sys
+import sys,os
 name= ['Agency','# Of Positions','Business Title','Civil Service Title','Salary Range From','Salary Range To','Salary Frequency','Work Location','Division/Work Unit','Job Description','Minimum Qual Requirements','Preferred Skills','Additional Information','Posting Date']
 def executeCommands(commandFileName):
 	f = open(commandFileName)
@@ -27,7 +27,8 @@ def executeCommand(commandLine):
 		print 'ERROR: Command %s does not exist' % (command,)
 		assert(False)
 def clear():
-	open('job_file.txt','w').close()
+	job_list.clear()
+
 def insert(params):
 	job_id=int(params[0])
 	job_detail=params[1:]
@@ -40,10 +41,12 @@ def dump():
 			print_word=str(job_id)+"|"+"|".join(job_list[job_id])
 			print print_word
 def save():
+	open('job_file.txt','w').close()
 	with open('job_file.txt','w') as print_file:
+
 		for job_id in sorted(job_list.keys()):
 			print_word=str(job_id)+"|"+"|".join(job_list[job_id])
-			print_file.write(print_word+'\n')
+			print_file.writelines(print_word+'\n')
 def update_all(params):
 	find_id=params[0]
 	find_val=params[1]
@@ -97,7 +100,19 @@ def find(params):
 		for item in rmint:
 			print_word=str(item)+"|"+"|".join(job_list[item])
 			print print_word
+def load():
+	if os.path.isfile('job_file.txt'):
+		with open('job_file.txt','r') as print_file:
+			for line in print_file:
+				records=line.split('|')
+				job_id=int(records[0])
+				job_detail=records[1:]
+				job_list[job_id]=job_detail
+	else:
+		open('job_file.txt','w').close()
 if __name__ == '__main__':
 	job_list={}
+	load()
+	clear()
 	executeCommands(sys.argv[1])
 	save()
