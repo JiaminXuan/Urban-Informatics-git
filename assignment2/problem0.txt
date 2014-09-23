@@ -1,0 +1,10 @@
+  I’m going to create 3 tables to store my data, “Job” table, “Division/Unit” table and “Agency” table.
+  Agency table is identified by “Agency_ID” and contains “agency name” and “address”(It’s easy to find that the address column is the address for agencies and it’s logical: different units belonging to the same agency share the same agency address)   
+  Division/Unit table is identified by “Unit_ID” and stores the “division/unit name”. It has a foreign key “Agency_ID”.
+  Job table (identified by “Job_ID”) contains all the other columns and it has a foreign key “Unit_ID”.
+  
+Reasons:
+  Reducing redundancy is a reason. There are many different units belong to one agency and there are many jobs posted by the same unit. So separating these three tables would reduce the redundancy.(1:n relation) 
+  To be logical is another reason. It’s just like a website, you create an account and post jobs. Every unit creates an unique account belonging to a specific agency. Then the unit could post it’s jobs. 
+
+  As for the “salary frequency”. it changes with the “Range from” and “Range to”. and you can store it as 0 and 1… as a factor. Anyway, there’s no need to store “salary frequency” in a separate table.(I mean you can but it’s not a must)
