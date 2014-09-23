@@ -1,0 +1,100 @@
+###HW 2
+##1
+#a
+draw<-rnorm(10)
+mean(draw)
+var(draw)
+sd(draw)
+#b
+draw<-rnorm(10000)
+mean(draw)
+var(draw)
+sd(draw)
+#c
+draw<-rnorm(1000000)
+mean(draw)
+var(draw)
+sd(draw)
+##2
+#a
+y<-read.table('~/Desktop/CUSP/Applied data science/assignment2/2.txt',sep = ',')
+y<-as.numeric(y)
+x<-read.table('~/Desktop/CUSP/Applied data science/assignment2/1.txt',sep = ',')
+x<-as.numeric(x)
+#b
+model<-lm(y~x)
+#c
+summary(model)
+##3
+adbe<-read.csv('adbe.csv')
+nasdaq<-read.csv('nasdaq.csv')
+#a
+ADBE<-as.numeric(t(adbe[5]))
+NASDAQ<-as.numeric(t(nasdaq[5]))
+n<-length(ADBE)
+lnrADBE<-rep(NA,n-1)
+lnrNASDAQ<-rep(NA,n-1)
+for (i in 1:(n-1)) 
+    {lnrADBE[i]<-log(ADBE[i]/ADBE[i+1])
+    lnrNASDAQ[i]<-log(NASDAQ[i]/NASDAQ[i+1])}
+#b
+hist(lnrADBE,break=100)
+#c
+plot(lnrNASDAQ,lnrADBE,main='Scatterplot of Log Returns')
+#d
+(capm<-lm(lnrADBE~lnrNASDAQ))
+confint(capm)
+##4
+#a
+library(foreign)
+train<-read.dta('train.dta')
+#b
+train[3]<-as.factor(train[1])
+summary(train)
+#c
+(svm<-lm(d~x1-1,data=train))
+#d
+predict(svm,data.frame(x1=0.65))
+#e
+predict(svm,data.frame(x1=0.99))
+##5
+#b
+x<-rnorm(1000)
+e<-rnorm(1000)
+y<-1+2*x+e
+#c
+summary(lm(y~x))
+#d
+x<-rnorm(1000)
+e<-rnorm(1000)
+y<-1+2*x+e
+summary(lm(y~x))
+x<-rnorm(1000)
+e<-rnorm(1000)
+y<-1+2*x+e
+summary(lm(y~x))
+x<-rnorm(1000)
+e<-rnorm(1000)
+y<-1+2*x+e
+summary(lm(y~x))
+x<-rnorm(1000)
+e<-rnorm(1000)
+y<-1+2*x+e
+summary(lm(y~x))
+x<-rnorm(1000)
+e<-rnorm(1000)
+y<-1+2*x+e
+summary(lm(y~x))
+#e
+beta1hat<-rep(NA,1000)
+for (i in 1:1000)
+    {x<-rnorm(1000)
+     e<-rnorm(1000)
+     y<-1+2*x+e
+     s<-lm(y~x)
+     beta1hat[i]<-coef(s)[2]}
+hist(beta1hat)
+#f
+eb<-exp(beta1hat)
+hist(eb)
+summary(eb)
