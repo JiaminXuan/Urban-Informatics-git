@@ -22,12 +22,12 @@ with open(sys.argv[1]) as f:
 					sf[item]+=1
 				else:
 					sf[item]=1
-x=sorted(ny.iteritems(), key=operator.itemgetter(0),reverse=True)
+x=sorted(ny.iteritems(), key=operator.itemgetter(0),reverse=False)
 x.sort(key=lambda tup: tup[1],reverse=True)
 print 'New York:'
 for i in range(0,5):
     print str(x[i][0])+', '+str(x[i][1])
-x=sorted(sf.iteritems(), key=operator.itemgetter(0),reverse=True)
+x=sorted(sf.iteritems(), key=operator.itemgetter(0),reverse=False)
 x.sort(key=lambda tup: tup[1],reverse=True)
 print 'San Francisco:'
 for i in range(0,5):
