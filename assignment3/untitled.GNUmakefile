@@ -32,7 +32,7 @@ test:
 	diff real_output_problem_8.txt sample_output_problem_8.txt
 
 zip:
-	zip $(NETID)_assignment_3.zip problem?.py 
+	zip jx624_assignment_3.zip problem?.py 
 
 download:
 	wget -N  http://vgc.poly.edu/projects/gx5003-fall2014/week3/lab/data/sample_data_problem_1.txt
