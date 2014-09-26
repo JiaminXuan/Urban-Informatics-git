@@ -24,10 +24,9 @@ with open(sys.argv[1]) as f:
 					sf[item]=1
 x=sorted(ny.iteritems(), key=lambda ny : (-ny[1], ny[0]), reverse=False)
 print 'New York:'
-for i in range(0,5):
+for i in xrange(5):
     print str(x[i][0])+', '+str(x[i][1])
 x=sorted(sf.iteritems(), key=lambda sf: (-sf[1], sf[0]),reverse=False)
-x.sort(key=lambda tup: tup[1],reverse=True)
 print 'San Francisco:'
-for i in range(0,5):
+for i in xrange(5):
     print str(x[i][0])+', '+str(x[i][1])

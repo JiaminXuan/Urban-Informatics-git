@@ -1,6 +1,7 @@
 import csv
 import sys
 from datetime import datetime, date
+import time
 name=[]
 minDate = datetime.strptime(date.max.isoformat(),"%Y-%m-%d")
 maxDate = datetime.strptime(date.min.isoformat(),"%Y-%m-%d")
@@ -17,5 +18,3 @@ with open(sys.argv[1]) as f:
 		if creationDateformatted>maxDate:
 			maxDate=creationDateformatted
 	print str(len(name))+' users tweeted between '+str(minDate.strftime("%B %d %Y, %H:%M:%S"))+' and '+str(maxDate.strftime("%B %d %Y, %H:%M:%S"))	
-
-
