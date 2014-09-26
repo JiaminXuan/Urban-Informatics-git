@@ -17,12 +17,9 @@ with open(sys.argv[1]) as f:
 		if insertdate>maxDate:
 			maxDate=insertdate
 		if row[0] in hashtag1.keys():	
-			hashtag1[row[0]].append(insertdate)
+			hashtag1[row[0]]+=1
 		else:
-			hashtag1[row[0]]=[insertdate]
+			hashtag1[row[0]]=1
 
-for keys in hashtag1:
-	if len(hashtag1[keys])>counter:
-		counter=len(hashtag1[keys])
-		keymarker=keys
+keymarker=max(hashtag1.iteritems(), key=operator.itemgetter(1))[0]
 print keymarker+' tweeted the most\nDataset range: '+str(minDate.strftime("%B %d %Y, %H:%M:%S"))+' and '+str(maxDate.strftime("%B %d %Y, %H:%M:%S"))	

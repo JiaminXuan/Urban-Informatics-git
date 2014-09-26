@@ -1,9 +1,7 @@
 import csv
 import sys
-from datetime import datetime, date
-hashtag1=[]
-hashtag2=[]
-output=[]
+hashtag1={}
+hashtag2={}
 with open(sys.argv[1]) as f:
 	csvReader=csv.reader(f)
 	for row in csvReader:
@@ -11,17 +9,13 @@ with open(sys.argv[1]) as f:
 			if item in hashtag1:
 				pass
 			else:
-				hashtag1.append(item)
+				hashtag1[item]=None
 with open(sys.argv[2]) as f:
 	csvReader=csv.reader(f)
 	for row in csvReader:
 		for item in row[4:]:
-			if item in hashtag2:
-				pass
-			else:
-				hashtag2.append(item)
-for hashlist in hashtag1:
-	if hashlist in hashtag2:
-		output.append(hashlist[1:])
-for item in sorted(output):
+			if item in hashtag1:
+				hashtag2[item]=item[1:]
+output=sorted(hashtag2.values())
+for item in output:
 	print '#'+item
