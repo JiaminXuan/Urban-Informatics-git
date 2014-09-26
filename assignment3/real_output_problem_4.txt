@@ -8,3 +8,4 @@
 #VeteranJob, 51
 #Retail, 46
 #EMABiggestFansJustinBieber, 44
+3.35397291183

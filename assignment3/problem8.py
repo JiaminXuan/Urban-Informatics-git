@@ -1,7 +1,6 @@
 import operator
 import csv
 import sys
-from datetime import datetime, date
 ny={}
 sf={}
 nygeo=[-74.2557,40.4957,-73.6895,40.9176]

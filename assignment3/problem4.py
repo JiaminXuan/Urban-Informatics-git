@@ -1,7 +1,6 @@
 import operator
 import csv
 import sys
-from datetime import datetime, date
 hashtag1={}
 with open(sys.argv[1]) as f:
 	csvReader=csv.reader(f)
@@ -13,6 +12,5 @@ with open(sys.argv[1]) as f:
 				hashtag1[item]=1
 x=sorted(hashtag1.iteritems(), key=operator.itemgetter(0),reverse=False)
 x.sort(key=lambda tup: tup[1],reverse=True)
-for i in range(0,10):
+for i in xrange(10):
     print str(x[i][0])+', '+str(x[i][1])
-	
