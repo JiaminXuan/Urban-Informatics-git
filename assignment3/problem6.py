@@ -1,6 +1,6 @@
 import csv
 import sys
-from datetime import datetime
+from datetime import datetime, date
 hashtag1={}
 with open(sys.argv[1]) as f:
 	csvReader=csv.reader(f)

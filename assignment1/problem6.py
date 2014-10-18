@@ -10,8 +10,8 @@ for item in sorted(set(Department)):
 		if Department.iloc[i]==item:
 			print str(rawdata.iloc[i,6]),
 			zip_code.append(rawdata.iloc[i,6])
-	for unique_zip in set(zip_code):
-		countnum=0
+	countnum=0
+	for unique_zip in set(zip_code):		
 		if zip_code.count(unique_zip)>countnum:
 			countnum=zip_code.count(unique_zip)
 	print countnum
