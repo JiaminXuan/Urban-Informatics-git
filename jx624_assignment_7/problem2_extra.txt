@@ -1,0 +1,9 @@
+How to run:
+like problem2_2 use: python problem2_extra.py [data.csv] [k]
+e.g. python problem2_extra.py 311data.csv 10
+
+1)it is not very straight forward but we can still use this script to explore the pattern of  different agency in a week by add the ‘k’ one by one(1,2,3,4) 
+
+2)it is interesting that the complaint of DOT, etc., is going down from Monday to Sunday, specially low in weekends but the complaints of NYPD(I assume is not complaint but crime report) is going up.
+
+I would like to write the function to explore the pattern of different hours and different seasons. I’ve already done that with 911 data in my GRA works, but I don’t have time to do it in this work, so I just summary the pattern I found in my previous work: seasonal effects: the volume will go up when days get hotter(e.g. Month 6,7,8), and the volume will go down when days get cooler(e.g. Month 11,12,1,2) 

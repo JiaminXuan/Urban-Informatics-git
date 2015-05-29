@@ -1,0 +1,6 @@
+Principles I used:
+1. Use visually prominent data elements:
+	Connecting lines should never obscure points and points should not obscure each other. Although there's no multiple samples overlap, a representation is e.g. an alternate color.
+2.Use all available space:
+	The empy space in the plot should be filled as much as possible horizontally and vertically. 
+3.Show both the symbols and their connections. The symbols demonstrate the actual concentrations of the data, while the path that the data takes can be better followed using the connections.

@@ -1,0 +1,10 @@
+Principles I used:
+0.Use all available space.:
+	The empy space in the plot should be filled as much as possible horizontally and vertically.
+1.Use visually prominent data elements:
+	Connecting lines didn't  obscure points and points didn't obscure each other. 
+2.Use proper scale lines and a data rectangle:
+	using an appropriate number of tick marks and labels for each axis (3-10 is generally sufficient). 
+3.Be careful with reference lines, labels, notes, and keys:
+	The data elements should be distinct enough from reference lines, labels, or notes, such that the correlations and trends can still be easily observed.
+4.show both the symbols and their connections. The symbols demonstrate the actual concentrations of the data, while the path that the data takes can be better followed using the connections. 

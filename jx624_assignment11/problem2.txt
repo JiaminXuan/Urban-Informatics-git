@@ -1,0 +1,3 @@
+problem2.txt
+As we can find the naive computation took more than 4 times longer than kdtree computation.
+"The naive computation took 29.3416597843 seconds, The kdtree computation took 6.40465497971 seconds"

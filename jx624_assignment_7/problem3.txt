@@ -1,0 +1,6 @@
+problem3.txt
+I choice to use csv reader to load the data, but I found a lot of missing data and typo in zip code. I need to get rid of them. So I use try function, if I can transform the string(first 5 digits) to the integer, then it means the data is correct. If the try goes wrong, I pass that line.
+For storing data, I use a dictionary with the zip code as the key and another dictionary(count, color) as the value. 
+
+For plot:
+I use pyplot.plot() to plot the dots. for 3_2 I use color to indicate the agency which has the most complaints. For each key and value  (—>x,y) in the dictionary, I plot once. After I finished all the data in the dictionary, I add the legend, title, labels.

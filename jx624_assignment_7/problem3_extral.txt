@@ -1,0 +1,8 @@
+As we can find in the scatter plot:
+NYPD and DOT and DPR have the most complaints.
+Although the dots diverge when population increases but we can say that the relation between population and volume is linear. 
+The slop of the linear regression would be NPYD>DOT>DPR
+
+Another thing is: people outside the NYC will rarely call NYPD and DOT so we don’t have much red or blue dots in the right lower corner.
+
+additional questions:TLC has very small amount of complaints in all zip code but if we plot in a different scale, we might find something about the complains of TLC.

@@ -1,0 +1,2 @@
+(1) First, I need to get the data, I read directly from csv file to dictionary. Then I need to decide the k, I write a IF statement to prevent k from overflow. Last, when doing ploting, I need to have the color list and I want to put ticks to the center of the bars and I add other stuff like labels, titles.
+(2) HPD has the most complaints and then it's DOT. There seems to be a long tail effect that most complaints concertrate in a few departments and then we have a long tail of department list. It looks like the volumn fit 1/x curve, I'm not sure.
